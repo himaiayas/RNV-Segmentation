@@ -44,8 +44,8 @@ def evaluation_metric(gt:np.ndarray, seg:np.ndarray) -> dict:
         }
 
 
-GT_DIR  = 'D:\mc\py\pakineeRNV\data\drac_split_gt';    # ground truth folder
-SEG_DIR = 'D:\mc\py\pakineeRNV\data\gvf\median\segmentation';   # segmentation folder
+GT_DIR  = 'YOUR_GROUND_TRUTH_FOLDER_PATH';    # ground truth folder
+SEG_DIR = 'YOUR_SEGMENTATION_FOLDER_PATH';   # segmentation folder
 
 valid_filenames = []
 evaluations = []
@@ -70,4 +70,5 @@ df = pd.DataFrame({
 df_f1 = pd.DataFrame(evaluations)
 
 df = pd.concat([df, df_f1], axis=1)
+
 df.to_csv("evaluation.csv")
